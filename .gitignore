@@ -1,0 +1,5 @@
+HRD-frontend/node_modules/
+HRD-backend/node_modules/
+*.env
+dist/
+build/
