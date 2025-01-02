@@ -1,0 +1,125 @@
+# global-rules.yml
+
+projectConventions:
+  indentation: 2
+  semicolons: always
+  quotes: single
+  naming:
+    components: PascalCase
+    variables: camelCase
+
+codeSnippets:
+  reactFunctionalComponent: |
+    import React from 'react';
+
+    function MyComponent() {
+      return (
+        <div>My Component</div>
+      );
+    }
+
+    export default MyComponent;
+  expressRouteExample: |
+    import express from 'express';
+    const router = express.Router();
+
+    // Add your route handlers here
+
+    export default router;
+
+domainContext:
+  projectName: "Home Run Derby App"
+  keyTerms:
+    - HRD: "Home Run Derby"
+    - MLB: "Major League Baseball"
+  constraints:
+    - "Always hash passwords with bcrypt before saving to DB"
+    - "Use environment variables for any secrets"
+  externalAPIs:
+    mlbStats:
+      baseURL: "https://api.mlb.com/stats"
+      auth: "API key or token"
+      endpoints:
+        - "/players"
+        - "/teams"
+      notes:
+        - "Use axios or fetch for calls"
+        - "Store API key in .env"
+
+bestPractices:
+  react:
+    - "Use functional components only"
+    - "Prefer useState and useEffect hooks"
+  security:
+    - "Sanitize user input"
+    - "Never log sensitive data"
+  style:
+    - "Avoid inline styling; use Tailwind classes"
+  logging:
+    node:
+      tool: "winston"
+      level: "info"
+      format: "json"
+    frontend:
+      useConsoleLogs: false
+      errorBoundary: "Use React Error Boundaries to catch UI errors"
+
+reviewPrinciples:
+  complexityThreshold: 50
+  documentationRequired: true
+  errorHandling: "Use .catch or try/catch for all async calls"
+
+linting:
+  eslintConfig:
+    extends: "eslint:recommended"
+    plugins:
+      - "react"
+      - "jsx-a11y"
+    rules:
+      noUnusedVars: "warn"
+      semi: ["error", "always"]
+  prettierConfig:
+    singleQuote: true
+    trailingComma: "es5"
+    printWidth: 100
+
+testingGuidelines:
+  framework: "jest"
+  location: "__tests__"
+  namingConvention: "*.test.js"
+  coverageThreshold:
+    statements: 80
+    branches: 80
+    functions: 80
+    lines: 80
+
+deployment:
+  ci:
+    tool: "GitHub Actions"
+    steps:
+      - "Install dependencies"
+      - "Run tests"
+      - "Build frontend"
+      - "Deploy to production"
+  docker:
+    imageName: "homerun-derby-app"
+    baseImage: "node:18"
+    ports:
+      - 3000
+      - 3001
+    environment:
+      - "NODE_ENV=production"
+      - "PORT=3001"
+
+accessibility:
+  ariaAttributes: true
+  altAttributes: always
+  semanticHTML: recommended
+  guidelines:
+    - "Use headings in a hierarchical manner (h1, h2, h3...)"
+    - "Provide alt text for all images"
+    - "Use aria-label where appropriate"
+
+customPrompts:
+  createReactComponent: "Write a React functional component with Tailwind CSS classes for styling."
+  createExpressRoute: "Write an Express router with GET, POST endpoints and a sample error handler."

@@ -7,7 +7,7 @@ const { Pool } = require('pg');
 const express = require('express');
 const cors = require('cors');
 
-const app = express();
+const app = require('./src/app');
 app.use(cors()); // Allow requests from frontend (adjust as needed)
 app.use(express.json());
 

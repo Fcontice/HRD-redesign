@@ -1,0 +1,51 @@
+HRD-redesign/
+├── .gitignore
+├── .env.example
+├── README.md
+├── package.json
+├── global-rules.yml
+│
+├── HRD-frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   └── assets/
+│   │       └── images/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   ├── layout/
+│   │   │   └── features/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── index.jsx
+│   ├── __tests__/
+│   ├── .eslintrc.js
+│   ├── .prettierrc
+│   ├── tailwind.config.js
+│   └── package.json
+│
+├── HRD-backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   └── app.js
+│   ├── __tests__/
+│   ├── .env
+│   ├── .eslintrc.js
+│   ├── .prettierrc
+│   └── package.json
+│
+└── docker/
+    ├── frontend.Dockerfile
+    ├── backend.Dockerfile
+    └── docker-compose.yml
